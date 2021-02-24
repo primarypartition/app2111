@@ -19,7 +19,7 @@ class WelcomeController extends AbstractController
     }
 
     /**
-     * @Route("/welcome2/{name}", name="welcome2")
+     * @Route("/welcome2/{name}", name="welcome2_arg")
      */
     public function index2($name): Response
     {
