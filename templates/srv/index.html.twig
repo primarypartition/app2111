@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DbController!{% endblock %}
+{% block title %}Hello SrvController!{% endblock %}
 
 {% block body %}
 <style>
@@ -11,11 +11,9 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
-    <ul>
-        {% for key, user in users %}
-        <li>{{user.name}}</li>
-        <li>{{gifts[1]}}</li>
-        {% endfor %}
+    {% for user in users %}
+        <li>{{user.name}} - you won {{random_gift[1]}}</li>
+    {% endfor %}
     </ul>
 </div>
 {% endblock %}

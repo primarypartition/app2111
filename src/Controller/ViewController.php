@@ -14,6 +14,7 @@ class ViewController extends AbstractController
     public function index(): Response
     {
         $users = ['Adam', 'Robert', 'John', 'Susan'];
+        
         return $this->render('view/index.html.twig', [
             'controller_name' => 'ViewController',
             'users' => $users,

@@ -35,6 +35,8 @@
 
 > composer remove symfony/requirements-checker
 
+> composer require logger
+
 
 # Git Repo Setup 
 
@@ -74,6 +76,9 @@ git push -u origin master
 
 > composer require orm
 
+> composer require symfony/asset
+
+
 # Commands
 
 > bin/console
@@ -87,6 +92,10 @@ git push -u origin master
 > bin/console make:migration
 
 > bin/console doctrine:migrations:migrate
+
+> bin/console debug:container
+
+> bin/console cache:clear
 
 
 # .htaccess file in public folder

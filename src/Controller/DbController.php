@@ -8,6 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\User;
 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 class DbController extends AbstractController
 {
     /**
@@ -17,9 +19,19 @@ class DbController extends AbstractController
     {
         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
 
+        if(!$users)
+        {
+            throw $this->createNotFoundException('The users do not exist');
+        }
+
+        $gifts = ['flowers', 'car', 'piano', 'money'];
+
+        shuffle($gifts);
+
         return $this->render('db/index.html.twig', [
             'controller_name' => 'DbController',
             'users' => $users,
+            'gifts' => $gifts,
         ]);
     }
 
