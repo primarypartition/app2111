@@ -51,6 +51,16 @@ git push -u origin master
 
 > composer require doctrine
 
+> composer require orm
+
+> bin/console doctrine:database:create
+ 
+> bin/console make:entity
+
+> bin/console make:migration
+
+> bin/console doctrine:migrations:migrate
+
 
 # Symfony Flex and Packages
 
@@ -62,12 +72,21 @@ git push -u origin master
 
 > composer require maker
 
+> composer require orm
 
 # Commands
 
 > bin/console
 
 > bin/console make:controller WelcomeController
+
+> bin/console doctrine:database:create
+
+> bin/console make:entity
+
+> bin/console make:migration
+
+> bin/console doctrine:migrations:migrate
 
 
 # .htaccess file in public folder
