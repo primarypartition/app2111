@@ -9,8 +9,9 @@
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
 
-        {% block javascripts %}
+        {% block javascripts %}         
             {#{{ encore_entry_script_tags('app') }}#}
+            <script src="{{asset('build/js/custom.js')}}"></script>
         {% endblock %}
     </head>
     <body>

@@ -63,6 +63,31 @@ git push -u origin master
 
 > bin/console doctrine:migrations:migrate
 
+> bin/console list doctrine
+
+> bin/console doctrine:schema:drop -n -q --force --full-database
+
+```
+bin/console doctrine:schema:drop -n -q --force --full-database &&
+rm migrations/*.php &&
+bin/console make:migration &&
+bin/console doctrine:migrations:migrate -n -q 
+```
+
+> bin/console doctrine:fixtures:load -n -q
+
+> bin/console make:entity Video
+
+> php bin/console make:migration
+
+> php bin/console doctrine:migrations:migrate
+
+> bin/console make:entity Address
+
+> php bin/console make:migration
+
+> php bin/console doctrine:migrations:migrate
+
 
 # Symfony Flex and Packages
 
@@ -77,6 +102,12 @@ git push -u origin master
 > composer require orm
 
 > composer require symfony/asset
+
+> composer require symfony/security-bundle
+
+> composer require orm-fixtures --dev
+
+> composer require sensio/framework-extra-bundle
 
 
 # Commands
@@ -97,6 +128,10 @@ git push -u origin master
 
 > bin/console cache:clear
 
+> bin/console list doctrine
+
+> bin/console doctrine:fixtures:load -n -q
+
 
 # .htaccess file in public folder
 
@@ -115,3 +150,30 @@ git push -u origin master
 </IfModule>
 ```
 
+# Webpack Encore
+
+> npm init
+
+> npm install @symfony/webpack-encore --save-dev
+
+> npm install --save jquery
+
+> touch webpack.config.js
+
+```
+var Encore = require('@symfony/webpack-encore');
+
+Encore
+    .setOutputPath('public/build/')
+    .setPublicPath('/build')
+    .addEntry('js/custom', './build/js/custom.js')
+    .addStyleEntry('css/custom', ['./build/css/custom.css'])
+    // .autoProvidejQuery()
+;
+
+module.exports = Encore.getWebpackConfig();
+```
+
+> ./node_modules/.bin/encore production
+
+> ./node_modules/.bin/encore dev --watch

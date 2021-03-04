@@ -20,4 +20,17 @@ class ViewController extends AbstractController
             'users' => $users,
         ]);
     }
+
+    /**
+     * No route
+     */
+    public function mostPopularPosts($number = 3)
+    {
+         // database call:
+         $posts = ['post 1', 'post 2', 'posts 3', 'posts 4'];
+
+         return $this->render('view/most_popular_posts.html.twig', [
+            'posts' => $posts,
+         ]);
+    }
 }

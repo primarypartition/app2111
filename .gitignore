@@ -8,3 +8,11 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+node_modules/
+.npm
+node_modules
+build
+npm-debug.log
+.env
+.DS_Store

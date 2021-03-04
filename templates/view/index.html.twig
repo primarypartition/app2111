@@ -53,6 +53,11 @@
 
 </div>
 
+    {{render(controller(
+        'App\\Controller\\ViewController::mostPopularPosts',
+        { 'number': 2 }
+    ))}}
+
 {% endblock %}
 
 {% block javascripts %}
