@@ -88,6 +88,8 @@ bin/console doctrine:migrations:migrate -n -q
 
 > php bin/console doctrine:migrations:migrate
 
+> php bin/console doctrine:fixtures:load
+
 
 # Symfony Flex and Packages
 
@@ -108,6 +110,10 @@ bin/console doctrine:migrations:migrate -n -q
 > composer require orm-fixtures --dev
 
 > composer require sensio/framework-extra-bundle
+
+> composer require web-profiler-bundle
+
+> composer require symfony/debug-bundle
 
 
 # Commands
