@@ -49,3 +49,33 @@ services:
         arguments:
             $second_service: '@App\Services\MySecondService'
  
+    App\Services\MyService4:
+        properties:
+            my: '@App\Services\MySecondService'
+            logger: '@monolog.logger'
+
+
+    App\Services\MyService5:
+        arguments:
+            $service: '@App\Services\MySecondService5'
+
+    App\Services\MySecondService5:
+        lazy: true
+
+
+    app.myservice6:
+        class: App\Services\MyService6
+        arguments:
+            $one: 'something'
+        public: true
+
+    App\Services\MyService6: '@app.myservice6'
+
+
+    App\Services\MyService7:
+        tags:
+            - { name: doctrine.event_listener, event: postFlush }
+            - { name: kernel.cache_clearer }
+
+
+    App\Services\ServiceInterface8: '@App\Services\MyService8'

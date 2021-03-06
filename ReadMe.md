@@ -90,6 +90,8 @@ bin/console doctrine:migrations:migrate -n -q
 
 > php bin/console doctrine:fixtures:load
 
+> bin/console debug:autowiring
+
 
 # Symfony Flex and Packages
 
@@ -114,6 +116,10 @@ bin/console doctrine:migrations:migrate -n -q
 > composer require web-profiler-bundle
 
 > composer require symfony/debug-bundle
+
+> composer require symfony/proxy-manager-bridge
+
+> composer require symfony/cache
 
 
 # Commands
@@ -155,6 +161,7 @@ bin/console doctrine:migrations:migrate -n -q
     </IfModule>
 </IfModule>
 ```
+
 
 # Webpack Encore
 
