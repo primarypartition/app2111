@@ -144,6 +144,14 @@ bin/console doctrine:migrations:migrate -n -q
 
 > bin/console doctrine:fixtures:load -n -q
 
+> bin/console debug:router
+
+> bin/console debug:autowiring
+
+> bin/console help make:migration
+
+> bin/console about
+
 
 # .htaccess file in public folder
 
