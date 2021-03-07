@@ -2,44 +2,88 @@
 
 namespace App\Entity;
 
-use App\Repository\VideoRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass=VideoRepository::class)
+ * @ORM\Entity(repositoryClass="App\Repository\VideoRepository")
  */
-class Video extends File
-{   
+class Video
+{
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
      */
-    private $format;
+    private $id;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="videos")
+     * @ORM\JoinColumn(nullable=true, onDelete="CASCADE")
+     */
+    private $user;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $duration;
-    
-    public function getFormat(): ?string
+    private $title;
+
+    public function getId(): ?int
     {
-        return $this->format;
+        return $this->id;
     }
 
-    public function setFormat(string $format): self
+
+    public function getUser(): ?User
     {
-        $this->format = $format;
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
 
-    public function getDuration(): ?string
+    public function getFile(): ?string
     {
-        return $this->duration;
+        return $this->file;
     }
 
-    public function setDuration(string $duration): self
+    public function setFile(string $file): self
     {
-        $this->duration = $duration;
+        $this->file = $file;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
 
         return $this;
     }

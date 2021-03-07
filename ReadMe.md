@@ -123,6 +123,8 @@ bin/console doctrine:migrations:migrate -n -q
 
 > composer require symfony/event-dispatcher
 
+> composer require symfony/form
+
 
 # Commands
 
@@ -159,6 +161,8 @@ bin/console doctrine:migrations:migrate -n -q
 > bin/console debug:event-dispatcher kernel.request
 
 > bin/console make:subscriber
+
+> bin/console make:form VideoFormType
 
 
 # .htaccess file in public folder
