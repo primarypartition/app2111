@@ -158,6 +158,8 @@ bin/console doctrine:migrations:migrate -n -q
 
 > bin/console debug:event-dispatcher kernel.request
 
+> bin/console make:subscriber
+
 
 # .htaccess file in public folder
 
