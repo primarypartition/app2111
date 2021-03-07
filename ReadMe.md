@@ -93,7 +93,7 @@ bin/console doctrine:migrations:migrate -n -q
 > bin/console debug:autowiring
 
 
-# Symfony Flex and Packages
+# Symfony Packages
 
 > https://flex.symfony.com/
 
@@ -120,6 +120,8 @@ bin/console doctrine:migrations:migrate -n -q
 > composer require symfony/proxy-manager-bridge
 
 > composer require symfony/cache
+
+> composer require symfony/event-dispatcher
 
 
 # Commands
