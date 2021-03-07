@@ -152,6 +152,10 @@ bin/console doctrine:migrations:migrate -n -q
 
 > bin/console about
 
+> bin/console debug:event-dispatcher
+
+> bin/console debug:event-dispatcher kernel.request
+
 
 # .htaccess file in public folder
 

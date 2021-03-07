@@ -79,3 +79,10 @@ services:
 
 
     App\Services\ServiceInterface8: '@App\Services\MyService8'
+
+
+    App\Services\KernelResponseListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.response }
+
+    
