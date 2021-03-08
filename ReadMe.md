@@ -133,6 +133,8 @@ bin/console doctrine:migrations:migrate -n -q
 
 > composer require --dev symfony/phpunit-bridge phpunit/phpunit
 
+> composer require symfony/orm-pack symfony/form symfony/security-bundle symfony/validator
+
 
 # Commands
 
@@ -181,6 +183,8 @@ bin/console doctrine:migrations:migrate -n -q
 > ./bin/phpunit
 
 > php bin/phpunit
+
+> bin/console make:user
 
 
 # .htaccess file in public folder

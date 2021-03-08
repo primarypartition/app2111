@@ -18,7 +18,6 @@ class Video
      */
     private $id;
 
-
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="videos")
      * @ORM\JoinColumn(nullable=true, onDelete="CASCADE")
@@ -38,11 +37,15 @@ class Video
      */
     private $title;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=SecurityUser::class, inversedBy="videos")
+     */
+    private $securityUser;
+
     public function getId(): ?int
     {
         return $this->id;
     }
-
 
     public function getUser(): ?User
     {
@@ -88,6 +91,18 @@ class Video
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getSecurityUser(): ?SecurityUser
+    {
+        return $this->securityUser;
+    }
+
+    public function setSecurityUser(?SecurityUser $securityUser): self
+    {
+        $this->securityUser = $securityUser;
 
         return $this;
     }
