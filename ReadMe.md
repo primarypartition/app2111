@@ -127,6 +127,12 @@ bin/console doctrine:migrations:migrate -n -q
 
 > composer require symfony/validator doctrine/annotations
 
+> composer require symfony/swiftmailer-bundle
+
+> composer require browser-kit css-selector --dev
+
+> composer require --dev symfony/phpunit-bridge phpunit/phpunit
+
 
 # Commands
 
@@ -165,6 +171,16 @@ bin/console doctrine:migrations:migrate -n -q
 > bin/console make:subscriber
 
 > bin/console make:form VideoFormType
+
+> bin/console swiftmailer:spool:send --time-limit=10
+
+> bin/console make:functional-test
+
+> bin/console make:test
+
+> ./bin/phpunit
+
+> php bin/phpunit
 
 
 # .htaccess file in public folder
