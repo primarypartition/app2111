@@ -2,16 +2,17 @@
 
 namespace App\Entity;
 
+use App\Repository\Video3Repository;
 use Doctrine\ORM\Mapping as ORM;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\VideoRepository")
+ * @ORM\Entity(repositoryClass=Video3Repository::class)
  */
-class Video
+class Video3
 {
-    /**
+ /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -28,15 +29,27 @@ class Video
     /**
      * @ORM\Column(type="datetime")
      * @Assert\NotBlank()
+     *  @Assert\Type("\DateTime")
      */
     private $created_at;
 
+    // @Assert\Email(message = "The email '{{ value }}' is not a valid email.")
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      * @Assert\Length(min = 2, max = 10, minMessage = "Video title must be at least {{ limit }} characters long", maxMessage = "Video title cannot be longer than {{ limit }} characters")
      */
     private $title;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\File(
+     * maxSize = "1024k",
+     * mimeTypes = {"video/mp4", "application/pdf", "application/x-pdf"},
+     * mimeTypesMessage = "Please upload a valid video"
+     * )
+     */
+    private $file;
 
     public function getId(): ?int
     {

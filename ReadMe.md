@@ -125,6 +125,8 @@ bin/console doctrine:migrations:migrate -n -q
 
 > composer require symfony/form
 
+> composer require symfony/validator doctrine/annotations
+
 
 # Commands
 

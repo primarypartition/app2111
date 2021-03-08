@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Video;
+use App\Entity\Video3;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,7 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 
-class VideoFormType extends AbstractType
+class VideoFormType2 extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -97,7 +97,7 @@ class VideoFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Video::class,
+            'data_class' => Video3::class,
         ]);
     }
 }

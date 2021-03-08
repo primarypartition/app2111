@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210307223249 extends AbstractMigration
+final class Version20210308002543 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -31,6 +31,8 @@ final class Version20210307223249 extends AbstractMigration
         $this->addSql('CREATE INDEX IDX_F7129A80233D34C1 ON user_user (user_target)');
         $this->addSql('CREATE TABLE video (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, user_id INTEGER DEFAULT NULL, created_at DATETIME NOT NULL, title VARCHAR(255) NOT NULL)');
         $this->addSql('CREATE INDEX IDX_7CC7DA2CA76ED395 ON video (user_id)');
+        $this->addSql('CREATE TABLE video3 (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, user_id INTEGER DEFAULT NULL, created_at DATETIME NOT NULL, title VARCHAR(255) NOT NULL, file VARCHAR(255) NOT NULL)');
+        $this->addSql('CREATE INDEX IDX_5F7625A2A76ED395 ON video3 (user_id)');
     }
 
     public function down(Schema $schema) : void
@@ -42,5 +44,6 @@ final class Version20210307223249 extends AbstractMigration
         $this->addSql('DROP TABLE user');
         $this->addSql('DROP TABLE user_user');
         $this->addSql('DROP TABLE video');
+        $this->addSql('DROP TABLE video3');
     }
 }
