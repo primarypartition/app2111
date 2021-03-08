@@ -135,6 +135,10 @@ bin/console doctrine:migrations:migrate -n -q
 
 > composer require symfony/orm-pack symfony/form symfony/security-bundle symfony/validator
 
+> composer require sensiolabs/security-checker
+
+> composer require symfony/expression-language
+
 
 # Commands
 
@@ -185,6 +189,10 @@ bin/console doctrine:migrations:migrate -n -q
 > php bin/phpunit
 
 > bin/console make:user
+
+> bin/console security:check 
+
+> bin/console make:voter
 
 
 # .htaccess file in public folder
