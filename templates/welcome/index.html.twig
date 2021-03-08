@@ -24,4 +24,10 @@
    
     {{ dump() }}
 
+    {% if app.user %}
+        <a href="{{path('security_logout')}}">logout</a>
+    {% endif %}
+
+    <a href="{{path('security_login')}}">awesome link</a>
+
 {% endblock %}

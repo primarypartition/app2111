@@ -131,7 +131,7 @@ bin/console doctrine:migrations:migrate -n -q
 
 > composer require browser-kit css-selector --dev
 
-> composer require --dev symfony/phpunit-bridge phpunit/phpunit
+> composer require --dev symfony/phpunit-bridge phpunit/phpunit symfony/test-pack
 
 > composer require symfony/orm-pack symfony/form symfony/security-bundle symfony/validator
 
@@ -187,6 +187,8 @@ bin/console doctrine:migrations:migrate -n -q
 > ./bin/phpunit
 
 > php bin/phpunit
+
+> vendor/bin/phpunit
 
 > bin/console make:user
 
