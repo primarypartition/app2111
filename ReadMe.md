@@ -139,6 +139,10 @@ bin/console doctrine:migrations:migrate -n -q
 
 > composer require symfony/expression-language
 
+> sudo apt-get install php-xdebug
+
+> composer require symfony/translation
+
 
 # Commands
 
@@ -189,6 +193,8 @@ bin/console doctrine:migrations:migrate -n -q
 > php bin/phpunit
 
 > vendor/bin/phpunit
+
+> php bin/phpunit --coverage-test
 
 > bin/console make:user
 
